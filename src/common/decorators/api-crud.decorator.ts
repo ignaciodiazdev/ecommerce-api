@@ -13,7 +13,7 @@ export function ApiCreateOperation(resource: string, type?: any){
 export function ApiGetAllOperation(resource: string, type?: any){
   return applyDecorators(
     ApiOperation({ summary: `Obtener todos los los ${resource}`}),
-    ApiResponse({ status: 200, description: `Lista de ${resource}.`, type }),
+    ApiResponse({ status: 200, description: `Lista de ${resource}.`, type, isArray: true }),
   )
 }
 
