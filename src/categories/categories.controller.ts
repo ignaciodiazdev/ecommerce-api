@@ -36,11 +36,7 @@ export class CategoriesController {
   @Public()
   @Get(':id/products')
   getProductsByCategory(@Param('id', ParseUUIDPipe) id: string){
-    return {
-      categoryId: id,
-      products: [],
-      message: "Los productos aparecerán cuando el modulo Product este implementado",
-    }
+    return this.categoriesService.getProductsByCategory(id);
   }
 
   @ApiUpdateOperation('categoría')

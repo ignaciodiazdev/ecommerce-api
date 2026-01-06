@@ -39,4 +39,15 @@ export class CategoriesService {
     const result = await this.categoryRepository.delete(id);
     if(result.affected === 0) throw new NotFoundException(`Category with ID ${id}, not found`);
   }
+
+  async getProductsByCategory(id: string){
+    await this.findOne(id);
+
+    const products = await this.categoryRepository.find({
+      where: { id },
+      relations: ['products']
+    });
+    
+    return products;
+  }
 }
