@@ -7,10 +7,10 @@ export function ApiGetRelatedOperation(
   responseType?: any
 ) {
   return applyDecorators(
-    ApiOperation({ summary: `Obtener ${child} de ${parent}` }),
+    ApiOperation({ summary: `Obtener ${child} por ${parent}` }),
     ApiResponse({ 
       status: 200, 
-      description: `Lista de ${child} de ${parent}.`,
+      description: `Lista de ${child} por ${parent}.`,
       type: responseType 
     }),
     ApiResponse({ status: 404, description: `${parent} no encontrado.` })
