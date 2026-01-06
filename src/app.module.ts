@@ -10,6 +10,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard, RolesGuard } from './auth/guards';
 import { HashingModule } from './common/hashing/hashing.module';
 import { CategoriesModule } from './categories/categories.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -23,7 +24,8 @@ import { CategoriesModule } from './categories/categories.module';
     UsersModule,
     AuthModule,
     HashingModule,
-    CategoriesModule
+    CategoriesModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [
